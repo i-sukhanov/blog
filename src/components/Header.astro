@@ -1,0 +1,15 @@
+---
+import Breadcrumbs from '@components/Breadcrumbs.astro'
+const { title } = Astro.props
+---
+
+<header class='header'>
+  <Breadcrumbs title={title} />
+  <!-- <nav class='header__nav'>
+    <a class='header__nav-item' href='/' class='logo'>Astro</a>
+    <a class='header__nav-item' href='/blog' class='nav-link'>Blog</a>
+    <a href='/github' class='nav-link'>GitHub</a>
+  </nav> -->
+</header>
+
+<style></style>

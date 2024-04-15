@@ -1,0 +1,47 @@
+---
+type Breadcrumb = {
+  label: string
+  href?: string
+}
+
+const generateBreadcrumbs = () => {
+  const breadcrumbs: Breadcrumb[] = [{ label: '~' }, { label: '/' }]
+  const { pathname } = Astro.url
+  const last = pathname.slice(1)
+
+  if (last) {
+    breadcrumbs.push(
+      { label: 'sukhanov', href: '/' },
+      { label: '/' },
+      { label: last }
+    )
+  } else {
+    breadcrumbs.push({ label: 'sukhanov' })
+  }
+
+  return breadcrumbs
+}
+---
+
+<nav class='breadcrumbs'>
+  {
+    generateBreadcrumbs().map(({ label, href }) => (
+      <li class='breadcrumbs__item'>
+        {href ? (
+          <a class='breadcrumbs__item-link' href={href}>
+            {label}
+          </a>
+        ) : (
+          <span class='breadcrumbs__item-label'>{label}</span>
+        )}
+      </li>
+    ))
+  }
+</nav>
+
+<style>
+  .breadcrumbs {
+    display: flex;
+    list-style: none;
+  }
+</style>
