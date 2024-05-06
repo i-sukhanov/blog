@@ -1,0 +1,52 @@
+:root {
+  --primary-color: #2b2d42; /* Dark Navy */
+  --secondary-color: #8d99ae; /* Light Blue Gray */
+  --background-color: #edf2f4; /* Light Gray (almost white) */
+  --accent-color: #ef233c; /* Deep Red */
+  --text-color: #2b2d42; /* Primary text color (matches primary color) */
+  --text-inverse-color: #edf2f4; /* Text color for darker backgrounds */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Fira Code', monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-inverse-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: var(--text-inverse-color);
+}
+
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--text-inverse-color);
+}

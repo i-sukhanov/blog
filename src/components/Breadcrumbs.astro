@@ -43,5 +43,37 @@ const generateBreadcrumbs = () => {
   .breadcrumbs {
     display: flex;
     list-style: none;
+    position: relative;
+  }
+
+  .breadcrumbs::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: -14px;
+    width: 10px;
+    height: 70%;
+    background-color: var(--text-inverse-color);
+    animation: fadeIn 1.3s infinite;
+  }
+
+  .breadcrumbs__item-link {
+    color: var(--text-inverse-color);
+    text-decoration: none;
+  }
+
+  .breadcrumbs__item-link:hover {
+    text-decoration: underline;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 </style>
